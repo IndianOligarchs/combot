@@ -6,11 +6,13 @@ from discord.ext import commands
 import asyncpg
 from discord import Intents
 intents = Intents.all()
-token = 'abcdefghijklmnopqrstuvwxyz'
+token='Nzk5MDAzMjExMzcyNDI5Mzcz.X_9Pug.tgU5PBdfi4WFggdZt0rKaUiUD1M'
 bot = commands.Bot(command_prefix='!', case_insensitive=True, activity=discord.Game(name='ComfyBot | !help'))
 initial_extensions = [
-                    'cogs.economy',
-                    'cogs.help'
+#                    'cogs.economy',
+                    'cogs.help',
+#                    'cogs.levelling'
+                    'cogs.votes'
                      ]
 
 if __name__ == '__main__':
@@ -29,7 +31,7 @@ async def on_ready():
 
 
 async def create_db_pool():
-    bot.pg_con = await asyncpg.create_pool(database='comfybot', user='admin', password='****')
+    bot.pg_con = await asyncpg.create_pool(database='comfybot', user='admin', password='kris1213A')
 
 @bot.event
 async def on_command_error(ctx, error):
